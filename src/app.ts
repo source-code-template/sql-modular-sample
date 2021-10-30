@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
 import mysql from 'mysql';
-import { createContext } from './init';
+import { createContext } from './context';
 import { route } from './route';
 
 dotenv.config();
