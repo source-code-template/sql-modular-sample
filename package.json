@@ -1,5 +1,5 @@
 {
-  "name": "backoffice",
+  "name": "sql-rest-api-ts",
   "version": "1.0.0",
   "description": "",
   "main": "app",
@@ -14,12 +14,12 @@
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-ext": "^0.1.9",
+    "express-ext": "^0.1.10",
     "mysql": "^2.18.1",
-    "mysql-core": "^0.1.10",
-    "onecore": "^0.0.19",
-    "query-core": "^0.1.9",
-    "validator-x": "^0.0.10"
+    "mysql-core": "^0.1.11",
+    "onecore": "0.0.20",
+    "query-core": "^0.1.10",
+    "xvalidators": "0.0.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
