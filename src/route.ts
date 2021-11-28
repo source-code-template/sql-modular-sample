@@ -3,6 +3,7 @@ import { ApplicationContext } from './context';
 
 export function route(app: Application, ctx: ApplicationContext): void {
   app.get('/health', ctx.health.check);
+  app.patch('/log', ctx.log.config);
 
   app.post('/users/search', ctx.user.search);
   app.get('/users/search', ctx.user.search);
