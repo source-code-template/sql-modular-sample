@@ -23,7 +23,7 @@ export const userModel: Model = {
       length: 14
     },
     dateOfBirth: {
-      field: 'date_of_birth',
+      column: 'date_of_birth',
       type: 'datetime'
     }
   }

@@ -4,7 +4,7 @@ import { UserFilter } from './UserFilter';
 import { UserService } from './UserService';
 
 export class UserController extends Controller<User, string, UserFilter> {
-  constructor(log: (msg: any, ctx?: any) => void, userService: UserService) {
+  constructor(log: (msg: string) => void, userService: UserService) {
     super(log, userService);
   }
 }

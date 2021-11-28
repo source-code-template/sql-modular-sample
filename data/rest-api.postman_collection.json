@@ -6,6 +6,41 @@
 	},
 	"item": [
 		{
+			"name": "config log",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": \"DEBUG\",\n    \"map\": {\n        \"msg\": \"message\",\n        \"time\": \"time\",\n        \"level\": \"severity\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/log",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "health check",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
