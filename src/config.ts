@@ -16,3 +16,12 @@ export const config = {
     multipleStatements: true,
   }
 };
+
+export const env = {
+  sit: {
+    port: 8082,
+    db: {
+      database: 'masterdata_sit',
+    }
+  }
+};
