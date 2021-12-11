@@ -1,4 +1,21 @@
-import { Model } from 'onecore';
+import { DateRange, Filter, Model, ResultInfo, Service } from 'onecore';
+
+export interface UserFilter extends Filter {
+  id: string;
+  username: string;
+  email?: string;
+  phone?: string;
+  dateOfBirth?: Date|DateRange;
+}
+export interface User {
+  id: string;
+  username: string;
+  email?: string;
+  phone?: string;
+  dateOfBirth?: Date;
+}
+export interface UserService extends Service<User, string, number | ResultInfo<User>, UserFilter> {
+}
 
 export const userModel: Model = {
   name: 'user',

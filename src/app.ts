@@ -9,9 +9,7 @@ import { createContext } from './context';
 import { route } from './route';
 
 dotenv.config();
-console.log(JSON.stringify(config));
 const conf = merge(config, process.env, env, process.env.ENV);
-console.log(JSON.stringify(conf));
 
 const app = express();
 app.use(json());

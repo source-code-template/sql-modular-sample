@@ -1,8 +1,5 @@
 import { Attribute, SearchResult, Service, StringMap } from 'query-core';
-import { User } from './User';
-import { UserFilter } from './UserFilter';
-import { userModel } from './UserModel';
-import { UserService } from './UserService';
+import { User, UserFilter, userModel, UserService } from './User';
 
 export class SqlUserService extends Service<User, string, UserFilter> implements UserService {
   constructor(
