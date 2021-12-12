@@ -1,10 +1,10 @@
 import { DB, SearchBuilder } from 'query-core';
 import { User, UserFilter, userModel, UserService } from './user';
-import { UserController } from './UserController';
+import { UserController } from './user-controller';
 export * from './user';
 export { UserController };
 
-import { SqlUserService } from './SqlUserService';
+import { SqlUserService } from './sql-user-service';
 
 export function useUser(db: DB): UserService {
   const builder = new SearchBuilder<User, UserFilter>(db.query, 'users', userModel.attributes, db.driver);
