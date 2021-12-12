@@ -21,7 +21,7 @@ export interface UserRepository extends Repository<User, string> {
 
 export const userModel: Model = {
   name: 'user',
-  source: 'users',
+  table: 'users',
   attributes: {
     id: {
       key: true,
