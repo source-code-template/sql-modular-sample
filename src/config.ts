@@ -7,6 +7,14 @@ export const config = {
       msg: 'message'
     }
   },
+  middleware: {
+    log: true,
+    skips: '/search',
+    request: 'request',
+    response: 'response',
+    status: 'status',
+    size: 'size'
+  },
   db: {
     host: '127.0.0.1',
     port: 3306,
@@ -23,5 +31,8 @@ export const env = {
     db: {
       database: 'masterdata_sit',
     }
+  },
+  prod: {
+    log: false
   }
 };
