@@ -5,11 +5,15 @@ export const config = {
     map: {
       time: '@timestamp',
       msg: 'message'
+    },
+    constants: {
+      app: '789',
+      service: 'user-service'
     }
   },
   middleware: {
     log: true,
-    skips: '/search',
+    skips: 'health,log',
     request: 'request',
     response: 'response',
     status: 'status',

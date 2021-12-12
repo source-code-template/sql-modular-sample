@@ -1,4 +1,4 @@
-import { Manager, SearchResult } from 'onecore';
+import { Log, Manager, Search } from 'onecore';
 import { DB, SearchBuilder } from 'query-core';
 import { User, UserFilter, userModel, UserRepository, UserService } from './user';
 import { UserController } from './user-controller';
@@ -7,9 +7,8 @@ export { UserController };
 
 import { SqlUserRepository } from './sql-user-repository';
 
-export type SearchFunc<T, F> = (s: F, limit?: number, offset?: number | string, fields?: string[]) => Promise<SearchResult<T>>;
 export class UserManager extends Manager<User, string, UserFilter> implements UserService {
-  constructor(search: SearchFunc<User, UserFilter>, repository: UserRepository) {
+  constructor(search: Search<User, UserFilter>, repository: UserRepository) {
     super(search, repository);
   }
 }
@@ -18,6 +17,6 @@ export function useUserService(db: DB): UserService {
   const repository = new SqlUserRepository(db);
   return new UserManager(builder.search, repository);
 }
-export function useUserController(log: (msg: string) => void, db: DB): UserController {
+export function useUserController(log: Log, db: DB): UserController {
   return new UserController(log, useUserService(db));
 }
