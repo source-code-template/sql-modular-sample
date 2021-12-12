@@ -13,7 +13,7 @@ export class UserManager extends Manager<User, string, UserFilter> implements Us
   }
 }
 export function useUserService(db: DB): UserService {
-  const builder = new SearchBuilder<User, UserFilter>(db.query, 'users', userModel.attributes, db.driver);
+  const builder = new SearchBuilder<User, UserFilter>(db.query, 'users', userModel, db.driver);
   const repository = new SqlUserRepository(db);
   return new UserManager(builder.search, repository);
 }
