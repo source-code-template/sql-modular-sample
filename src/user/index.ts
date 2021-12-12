@@ -5,7 +5,7 @@ import { UserController } from './user-controller';
 export * from './user';
 export { UserController };
 
-import { SqlUserService } from './sql-user-repository';
+import { SqlUserRepository } from './sql-user-repository';
 
 export class UserManager extends Manager<User, string, UserFilter> implements UserService {
   constructor(find: (s: UserFilter, limit?: number, offset?: number | string, fields?: string[]) => Promise<SearchResult<User>>, repository: UserRepository) {
@@ -14,7 +14,7 @@ export class UserManager extends Manager<User, string, UserFilter> implements Us
 }
 export function useUser(db: DB): UserService {
   const builder = new SearchBuilder<User, UserFilter>(db.query, 'users', userModel.attributes, db.driver);
-  const repository = new SqlUserService(db);
+  const repository = new SqlUserRepository(db);
   return new UserManager(builder.search, repository);
 }
 export function useUserController(log: (msg: string) => void, db: DB): UserController {
