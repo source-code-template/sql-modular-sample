@@ -11,16 +11,15 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "body-parser": "^1.19.1",
     "config-plus": "^0.0.4",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "express-ext": "^0.1.15",
     "logger-core": "^0.1.6",
     "mysql": "^2.18.1",
     "mysql-core": "^0.1.14",
     "onecore": "^0.0.27",
-    "query-core": "^0.1.16",
+    "query-core": "^0.1.18",
     "types-validation": "^0.0.2",
     "xvalidators": "^0.0.3"
   },
