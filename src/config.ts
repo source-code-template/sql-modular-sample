@@ -1,5 +1,11 @@
 export const config = {
   port: 8080,
+  allow: {
+    origin: '*',
+    credentials: 'true',
+    methods: 'GET,PUT,POST,DELETE,OPTIONS,PATCH',
+    headers: '*'
+  },
   log: {
     level: 'info',
     map: {
@@ -7,13 +13,13 @@ export const config = {
       msg: 'message'
     },
     constants: {
-      app: '789',
+      app: '123',
       service: 'user-service'
     }
   },
   middleware: {
     log: true,
-    skips: 'health,log',
+    skips: 'health,log,middleware',
     request: 'request',
     response: 'response',
     status: 'status',
@@ -37,6 +43,8 @@ export const env = {
     }
   },
   prod: {
-    log: false
+    middleware: {
+      log: false
+    }
   }
 };

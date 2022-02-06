@@ -1,7 +1,7 @@
 import { merge } from 'config-plus';
 import dotenv from 'dotenv';
 import express, { json } from 'express';
-import { MiddlewareLogger } from 'express-ext';
+import { allow, MiddlewareLogger } from 'express-ext';
 import http from 'http';
 import { createLogger } from 'logger-core';
 import mysql from 'mysql';
@@ -16,7 +16,7 @@ const conf = merge(config, process.env, env, process.env.ENV);
 const app = express();
 const logger = createLogger(conf.log);
 const middleware = new MiddlewareLogger(logger.info, conf.middleware);
-app.use(json(), middleware.log);
+app.use(allow(conf.allow), json(), middleware.log);
 
 const pool = mysql.createPool(conf.db);
 const db = new PoolManager(pool);
