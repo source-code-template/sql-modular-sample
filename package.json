@@ -5,6 +5,8 @@
   "main": "app",
   "scripts": {
     "start": "nodemon --exec ts-node-dev src/app",
+    "build": "webpack --config webpack.config.js",
+    "prod": "node dist/app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -c .eslintrc.js --ext .ts src"
   },
@@ -30,9 +32,13 @@
     "@typescript-eslint/parser": "^5.11.0",
     "eslint": "^8.8.0",
     "nodemon": "^2.0.15",
+    "ts-loader": "^8.0.12",
     "ts-node-dev": "^1.1.8",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
