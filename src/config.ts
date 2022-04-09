@@ -11,10 +11,6 @@ export const config = {
     map: {
       time: '@timestamp',
       msg: 'message'
-    },
-    constants: {
-      app: '123',
-      service: 'user-service'
     }
   },
   middleware: {
@@ -37,12 +33,14 @@ export const config = {
 
 export const env = {
   sit: {
-    port: 8082,
     db: {
       database: 'masterdata_sit',
     }
   },
-  prod: {
+  prd: {
+    log: {
+      level: 'error'
+    },
     middleware: {
       log: false
     }
