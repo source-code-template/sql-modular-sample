@@ -1,1 +1,1 @@
-# sql-rest-api-ts
+# sql-modular-sample
