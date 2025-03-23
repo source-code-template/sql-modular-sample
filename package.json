@@ -16,7 +16,7 @@
     "config-plus": "^0.0.4",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "express-ext": "^0.3.9",
+    "express-ext": "^0.4.0",
     "logger-core": "^0.3.1",
     "mysql2": "^3.14.0",
     "mysql2-core": "^0.2.3",
