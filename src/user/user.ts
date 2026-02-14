@@ -26,19 +26,23 @@ export const userModel: Attributes = {
   username: {
     required: true,
     length: 255,
+    resource: "username",
   },
   email: {
     format: "email",
     required: true,
     length: 120,
+    resource: "email",
   },
   phone: {
     format: "phone",
     required: true,
     length: 14,
+    resource: "phone",
   },
   dateOfBirth: {
     column: "date_of_birth",
     type: "datetime",
+    resource: "date_of_birth",
   },
 }

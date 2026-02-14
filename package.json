@@ -19,7 +19,7 @@
     "express-ext": "^0.6.1",
     "logger-core": "^0.3.1",
     "mysql2": "^3.16.3",
-    "mysql2-core": "^0.3.0",
+    "mysql2-core": "^0.3.2",
     "onecore": "^0.5.9",
     "query-core": "^0.6.6",
     "types-validation": "^0.0.2",
