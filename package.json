@@ -14,26 +14,26 @@
   "author": "",
   "dependencies": {
     "config-plus": "^0.0.4",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "express-ext": "^0.4.0",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "express-ext": "^0.6.1",
     "logger-core": "^0.3.1",
     "mysql2": "^3.16.3",
-    "mysql2-core": "^0.2.4",
-    "onecore": "^0.1.5",
-    "query-core": "^0.2.0",
+    "mysql2-core": "^0.3.0",
+    "onecore": "^0.5.9",
+    "query-core": "^0.6.6",
     "types-validation": "^0.0.2",
-    "xvalidators": "^0.3.2"
+    "xvalidators": "^0.5.19"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
-    "nodemon": "^3.1.9",
-    "ts-loader": "^9.5.2",
+    "@types/express": "^5.0.6",
+    "nodemon": "^3.1.11",
+    "ts-loader": "^9.5.4",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.8.2",
-    "webpack": "^5.98.0",
-    "webpack-bundle-analyzer": "^4.10.2",
+    "typescript": "^5.9.3",
+    "webpack": "^5.105.0",
+    "webpack-bundle-analyzer": "^5.2.0",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0"
+    "webpack-dev-server": "^5.2.3"
   }
 }

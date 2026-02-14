@@ -1,21 +1,19 @@
-import { Log, Manager, Search } from "onecore"
-import { DB, SearchBuilder } from "query-core"
+import { UseCase } from "onecore"
+import { DB } from "query-core"
 import { UserController } from "./controller"
 import { SqlUserRepository } from "./repository"
-import { User, UserFilter, userModel, UserRepository, UserService } from "./user"
+import { User, UserFilter, UserRepository, UserService } from "./user"
+export * from "./controller"
 export * from "./user"
-export { UserController }
 
-export class UserManager extends Manager<User, string, UserFilter> implements UserService {
-  constructor(search: Search<User, UserFilter>, repository: UserRepository) {
-    super(search, repository)
+export class UserUseCase extends UseCase<User, string, UserFilter> implements UserService {
+  constructor(repository: UserRepository) {
+    super(repository)
   }
 }
-export function useUserService(db: DB): UserService {
-  const builder = new SearchBuilder<User, UserFilter>(db.query, "users", userModel, db.driver)
+
+export function useUserController(db: DB): UserController {
   const repository = new SqlUserRepository(db)
-  return new UserManager(builder.search, repository)
-}
-export function useUserController(log: Log, db: DB): UserController {
-  return new UserController(log, useUserService(db))
+  const service = new UserUseCase(repository)
+  return new UserController(service)
 }

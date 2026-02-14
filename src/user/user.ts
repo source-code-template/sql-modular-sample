@@ -15,7 +15,7 @@ export interface User {
   dateOfBirth?: Date
 }
 
-export interface UserRepository extends Repository<User, string> {}
+export interface UserRepository extends Repository<User, string, UserFilter> {}
 export interface UserService extends Service<User, string, UserFilter> {}
 
 export const userModel: Attributes = {

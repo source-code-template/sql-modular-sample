@@ -19,7 +19,7 @@ export function useContext(db: DB, logger: Logger, midLogger: Middleware): Appli
   const sqlChecker = createChecker(db)
   const health = new HealthController([sqlChecker])
 
-  const user = useUserController(logger.error, db)
+  const user = useUserController(db)
 
   return { health, log, middleware, user }
 }
