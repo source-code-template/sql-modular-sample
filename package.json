@@ -18,7 +18,7 @@
     "express": "^5.2.1",
     "express-ext": "^0.6.1",
     "logger-core": "^0.3.1",
-    "mysql2": "^3.17.1",
+    "mysql2": "^3.17.4",
     "mysql2-core": "^0.3.3",
     "onecore": "^0.5.9",
     "query-core": "^0.6.6",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
-    "nodemon": "^3.1.11",
+    "nodemon": "^3.1.14",
     "ts-loader": "^9.5.4",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3",
