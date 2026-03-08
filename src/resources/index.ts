@@ -20,7 +20,7 @@ export const resources: Resources = {
   vi: vi,
 }
 
-export function getResource(lang: string | Request): StringMap {
+export function getResource(lang?: string | Request): StringMap {
   if (lang) {
     if (typeof lang === "string") {
       const r = resources[lang]
