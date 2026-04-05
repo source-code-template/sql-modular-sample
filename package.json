@@ -14,7 +14,7 @@
   "author": "",
   "dependencies": {
     "config-plus": "^0.0.4",
-    "dotenv": "^17.3.1",
+    "dotenv": "^17.4.0",
     "express": "^5.2.1",
     "express-ext": "^0.6.1",
     "logger-core": "^0.3.1",
@@ -28,11 +28,11 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "nodemon": "^3.1.14",
-    "ts-loader": "^9.5.4",
+    "ts-loader": "^9.5.7",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "webpack": "^5.105.4",
-    "webpack-bundle-analyzer": "^5.2.0",
+    "webpack-bundle-analyzer": "^5.3.0",
     "webpack-cli": "^7.0.2",
     "webpack-dev-server": "^5.2.3"
   }
