@@ -14,13 +14,13 @@
   "author": "",
   "dependencies": {
     "config-plus": "^0.0.4",
-    "dotenv": "^17.4.1",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "express-ext": "^0.6.1",
+    "express-ext": "^0.6.3",
     "logger-core": "^0.3.1",
-    "mysql2": "^3.22.0",
+    "mysql2": "^3.22.1",
     "mysql2-core": "^0.3.3",
-    "onecore": "^0.5.9",
+    "onecore": "^0.5.10",
     "query-core": "^0.6.6",
     "types-validation": "^0.0.2",
     "xvalidators": "^0.5.19"
@@ -30,8 +30,8 @@
     "nodemon": "^3.1.14",
     "ts-loader": "^9.5.7",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^6.0.2",
-    "webpack": "^5.106.1",
+    "typescript": "^6.0.3",
+    "webpack": "^5.106.2",
     "webpack-bundle-analyzer": "^5.3.0",
     "webpack-cli": "^7.0.2",
     "webpack-dev-server": "^5.2.3"
