@@ -1,4 +1,4 @@
-import { DB, Repository } from "query-core"
+import { DB, Repository } from "sql-core"
 import { User, UserFilter, userModel, UserRepository } from "./user"
 
 export class SqlUserRepository extends Repository<User, string, UserFilter> implements UserRepository {

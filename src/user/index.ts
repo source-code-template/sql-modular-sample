@@ -1,5 +1,5 @@
 import { UseCase } from "onecore"
-import { DB } from "query-core"
+import { DB } from "sql-core"
 import { UserController } from "./controller"
 import { SqlUserRepository } from "./repository"
 import { User, UserFilter, UserRepository, UserService } from "./user"
