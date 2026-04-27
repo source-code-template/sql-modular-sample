@@ -1,7 +1,7 @@
-import { HealthController, LogController, Logger, Middleware, MiddlewareController, resources } from "express-ext"
+import { HealthController, LogController, Logger, Middleware, MiddlewareController, resources } from "express-core-web"
 import { createChecker, DB } from "sql-core"
 import { check } from "types-validation"
-import { createValidator } from "xvalidators"
+import { createValidator } from "validation-core"
 import { UserController, useUserController } from "./user"
 
 resources.createValidator = createValidator

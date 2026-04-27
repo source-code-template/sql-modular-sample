@@ -16,14 +16,14 @@
     "config-plus": "^0.0.4",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "express-ext": "^0.6.3",
+    "express-core-web": "^0.1.2",
     "logger-core": "^0.3.1",
-    "mysql2": "^3.22.1",
+    "mysql2": "^3.22.3",
     "mysql2-core": "^0.3.3",
     "onecore": "^0.5.10",
     "sql-core": "^0.1.1",
     "types-validation": "^0.0.2",
-    "xvalidators": "^0.5.19"
+    "validation-core": "^1.1.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

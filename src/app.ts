@@ -1,7 +1,7 @@
 import { merge } from "config-plus"
 import dotenv from "dotenv"
 import express, { json } from "express"
-import { allow, MiddlewareLogger } from "express-ext"
+import { allow, MiddlewareLogger } from "express-core-web"
 import http from "http"
 import { createLogger } from "logger-core"
 import { createPool, PoolManager, resource } from "mysql2-core"

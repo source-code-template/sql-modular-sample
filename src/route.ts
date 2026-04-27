@@ -1,5 +1,5 @@
 import { Application } from "express"
-import { check } from "express-ext"
+import { check } from "express-core-web"
 import { ApplicationContext } from "./context"
 import { userModel } from "./user"
 

@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
-import { format, fromRequest, getStatusCode, handleError, isSuccessful } from "express-ext"
-import { validate } from "xvalidators"
+import { format, fromRequest, getStatusCode, handleError, isSuccessful } from "express-core-web"
+import { validate } from "validation-core"
 import { getResource } from "../resources"
 import { User, UserFilter, userModel, UserService } from "./user"
 
