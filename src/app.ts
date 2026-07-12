@@ -5,14 +5,14 @@ import { allow, MiddlewareLogger } from "express-core-web"
 import http from "http"
 import { createLogger } from "logger-core"
 import { createPool, PoolManager, resource } from "mysql2-core"
-import { config, env } from "./config"
+import { config, environments } from "./config"
 import { useContext } from "./context"
 import { route } from "./route"
 
 resource.multipleStatements = true
 
 dotenv.config()
-const cfg = merge(config, process.env, env, process.env.ENV)
+const cfg = merge(config, process.env, environments, process.env.ENV)
 
 const app = express()
 const logger = createLogger(cfg.log)

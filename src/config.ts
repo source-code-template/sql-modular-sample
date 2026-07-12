@@ -1,48 +1,48 @@
 export const config = {
   port: 8080,
   allow: {
-    origin: '*',
-    credentials: 'true',
-    methods: 'GET,PUT,POST,DELETE,OPTIONS,PATCH',
-    headers: '*'
+    origin: "*",
+    credentials: "true",
+    methods: "GET,PUT,POST,DELETE,OPTIONS,PATCH",
+    headers: "*",
   },
   log: {
-    level: 'info',
+    level: "info",
     map: {
-      time: '@timestamp',
-      msg: 'message'
-    }
+      time: "@timestamp",
+      msg: "message",
+    },
   },
   middleware: {
     log: true,
-    skips: 'health,log,middleware',
-    request: 'request',
-    response: 'response',
-    status: 'status',
-    size: 'size'
+    skips: "health,log,middleware",
+    request: "request",
+    response: "response",
+    status: "status",
+    size: "size",
   },
   db: {
-    host: '127.0.0.1',
+    host: "127.0.0.1",
     port: 3306,
-    user: 'root',
-    password: 'abcd1234',
-    database: 'masterdata',
+    user: "root",
+    password: "abcd1234",
+    database: "masterdata",
     multipleStatements: true,
-  }
-};
+  },
+}
 
-export const env = {
+export const environments = {
   sit: {
     db: {
-      database: 'masterdata_sit',
-    }
+      database: "masterdata_sit",
+    },
   },
   prd: {
     log: {
-      level: 'error'
+      level: "error",
     },
     middleware: {
-      log: false
-    }
-  }
-};
+      log: false,
+    },
+  },
+}
