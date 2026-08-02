@@ -267,16 +267,12 @@ New languages can be added without changing business logic.
 
 # Validation
 
-Validation is performed using **validation-core** and **types-validation**.
+Validation is handled by [**validation-core**](https://www.npmjs.com/package/validation-core), with rules defined in the model.
 
 ```ts
 const resource = getResource(req)
 
 const errors = validate<User>(user, userModel, resource)
-
-if (errors.length > 0) {
-  return res.status(getStatusCode(errors)).json(errors).end()
-}
 ```
 
 Validation rules are defined alongside the entity model rather than inside controllers.
@@ -288,6 +284,12 @@ Examples include:
 - Length constraints
 - Pattern validation
 - Primary key validation
+
+Type validation is also integrated into routing through:
+```ts
+const checkUser = check(userModel)
+```
+and reinforced in controller methods. This shows both middleware-based and controller-level validation approaches.
 
 ---
 
@@ -456,6 +458,20 @@ These samples share the same architecture, allowing developers to switch databas
 - Production-ready
 - Explicit
 - Testable
+
+---
+
+# Strengths
+
+The project stands out for several reasons:
+- **Very explicit flow** from HTTP request to database.
+- **Clear layered architecture** with well-defined responsibilities.
+- **Minimal boilerplate** thanks to generic repositories and use cases.
+- **Database abstraction** through sql-core.
+- **Good observability** with structured logging and health checks.
+- **Simple dependency composition** without a DI container.
+
+---
 
 # API Design
 
@@ -722,7 +738,7 @@ DELETE /users/wolverine
 
 ---
 
-# Available Scripts
+# How to build and run
 
 ### `npm start`
 
