@@ -21,7 +21,7 @@
     "mysql2": "^3.23.2",
     "mysql2-core": "^0.3.8",
     "onecore": "^0.5.15",
-    "sql-core": "^0.1.3",
+    "sql-core": "^0.1.5",
     "types-validation": "^0.0.2",
     "validation-core": "^1.1.1"
   },
