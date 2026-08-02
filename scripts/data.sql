@@ -1,10 +1,9 @@
 create table if not exists users (
-  id varchar(40) not null,
+  id varchar(40) primary key,
   username varchar(120),
   email varchar(120),
   phone varchar(45),
-  date_of_birth date,
-  primary key (id)
+  date_of_birth datetime
 );
 
 insert into users (id, username, email, phone, date_of_birth) values ('ironman', 'tony.stark', 'tony.stark@gmail.com', '0987654321', '1963-03-25');
