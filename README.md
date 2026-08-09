@@ -24,6 +24,22 @@ Unlike the more opinionated samples, this project keeps the request-processing f
 
 ---
 
+# How to build and run
+
+### `npm start`
+
+Runs the app in the development mode.
+
+### `npm run build`
+
+Builds the app for production to the `dist` folder.
+
+### `npm run prod`
+
+Runs the app for production in the `dist` folder.
+
+---
+
 # Architecture
 
 ![Architecture](https://cdn-images-1.medium.com/max/800/1*JDYTlK00yg0IlUjZ9-sp7Q.png)
@@ -88,10 +104,10 @@ src
 ├── resources/             # Localization resources
 │
 └── user/
-    ├── controller.ts
-    ├── service.ts
-    ├── repository.ts
     ├── user.ts
+    ├── repository.ts
+    ├── service.ts
+    ├── controller.ts
     └── index.ts
 ```
 
@@ -300,7 +316,7 @@ and reinforced in controller methods. This shows both middleware-based and contr
 
 The application uses MiddlewareLogger from [express-web-kit](https://www.npmjs.com/package/express-web-kit) together with [logger-core](https://www.npmjs.com/package/logger-core) for structured request logging. This provides a consistent logging strategy across the application.
 
-The sample uses structured request logging through **middleware-logging**.
+The sample uses structured request logging through [**express-web-kit**](https://www.npmjs.com/package/express-web-kit).
 
 Middleware logging is configurable:
 
@@ -411,11 +427,11 @@ It demonstrates:
 
 - Explicit request processing
 - Layered architecture
-- Generic repositories
-- Reusable CRUD services
-- MySQL integration
 - Structured logging
 - Request validation
+- Reusable CRUD services
+- Generic repositories
+- MySQL integration
 
 without introducing unnecessary complexity.
 
@@ -431,13 +447,13 @@ This sample demonstrates how several [**core-ts**](https://github.com/core-ts) l
 | ------------------------------------------------------------------------ | ----------------------------------------------------- |
 | [`express-web-kit`](https://www.npmjs.com/package/express-web-kit)       | Express utilities and REST helpers                    |
 | [`middleware-logging`](https://www.npmjs.com/package/middleware-logging) | HTTP request and response logging                     |
-| [`mysql2-core`](https://www.npmjs.com/package/mysql2-core)               | MySQL adapter for sql-core                            |
-| [`sql-core`](https://www.npmjs.com/package/sql-core)                     | Generic SQL repositories and data access abstractions |
 | [`validation-core`](https://www.npmjs.com/package/validation-core)       | High-performance validation library                   |
-| [`config-plus`](https://www.npmjs.com/package/config-plus)               | Configuration management                              |
+| [`onecore`](https://www.npmjs.com/package/onecore)                       | Generic CRUD use cases and common abstractions        |
+| [`sql-core`](https://www.npmjs.com/package/sql-core)                     | Generic SQL repositories and data access abstractions |
+| [`mysql2-core`](https://www.npmjs.com/package/mysql2-core)               | MySQL adapter for sql-core                            |
 | [`health-service`](https://www.npmjs.com/package/health-service)         | Health endpoint                                       |
 | [`logger-core`](https://www.npmjs.com/package/logger-core)               | Structured logging                                    |
-| [`onecore`](https://www.npmjs.com/package/onecore)                       | Generic CRUD use cases and common abstractions        |
+| [`config-plus`](https://www.npmjs.com/package/config-plus)               | Configuration management                              |
 
 Each library focuses on a single responsibility.
 
@@ -474,7 +490,7 @@ The project stands out for several reasons:
 - **Very explicit flow** from HTTP request to database.
 - **Clear layered architecture** with well-defined responsibilities.
 - **Minimal boilerplate** thanks to generic repositories and use cases.
-- **Database abstraction** through sql-core.
+- **Database abstraction** through [`sql-core`](https://www.npmjs.com/package/sql-core).
 - **Good observability** with structured logging and health checks.
 - **Simple dependency composition** without a DI container.
 
@@ -494,7 +510,7 @@ To check if the service is available
 {
   "status": "UP",
   "details": {
-    "sql": {
+    "mysql": {
       "status": "UP"
     }
   }
@@ -742,22 +758,6 @@ DELETE /users/wolverine
 ```json
 1
 ```
-
----
-
-# How to build and run
-
-### `npm start`
-
-Runs the app in the development mode.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.
-
-### `npm run prod`
-
-Runs the app for production in the `dist` folder.
 
 ---
 

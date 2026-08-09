@@ -5,6 +5,7 @@
   "main": "app",
   "scripts": {
     "start": "nodemon --exec ts-node-dev src/app",
+    "dev": "nodemon --exec ts-node-dev src/app",
     "build": "webpack --config webpack.config.js",
     "prod": "node dist/app",
     "test": "echo \"Error: no test specified\" && exit 1",
