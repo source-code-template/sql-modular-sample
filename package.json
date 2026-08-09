@@ -16,11 +16,11 @@
     "config-plus": "^0.1.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "express-core-web": "^0.1.5",
-    "logger-core": "^0.5.1",
+    "express-web-kit": "^0.0.3",
+    "logger-core": "^0.5.2",
     "mysql2": "^3.23.2",
     "mysql2-core": "^0.3.8",
-    "onecore": "^0.5.15",
+    "onecore": "^0.6.2",
     "sql-core": "^0.1.5",
     "types-validation": "^0.0.2",
     "validation-core": "^1.1.1"
@@ -31,9 +31,9 @@
     "ts-loader": "^9.6.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.3",
-    "webpack": "^5.108.4",
+    "webpack": "^5.109.2",
     "webpack-bundle-analyzer": "^5.3.1",
-    "webpack-cli": "^7.2.1",
+    "webpack-cli": "^7.2.2",
     "webpack-dev-server": "^6.0.0"
   }
 }

@@ -1,5 +1,5 @@
 import { Request } from "express"
-import { query } from "express-core-web"
+import { query } from "express-web-kit"
 import { StringMap } from "onecore"
 import { en as commonEN } from "./en"
 import { vi as commonVI } from "./vi"
