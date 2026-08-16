@@ -1,10 +1,11 @@
 import { merge } from "config-plus"
 import dotenv from "dotenv"
 import express, { json, Request } from "express"
-import { allow, mask, MiddlewareLogger, SimpleMap, toString } from "express-web-kit"
+import { allow, toString } from "express-web-kit"
 import http from "http"
 import { createLogger, updateLog } from "logger-core"
-import { createPool, PoolManager, resource } from "mysql2-core"
+import { mask, MiddlewareLogger, SimpleMap } from "middleware-logging"
+import { createPool, resource } from "mysql2-core"
 import { config, environments } from "./config"
 import { useContext } from "./context"
 import { route } from "./route"
@@ -23,8 +24,7 @@ const middleware = new MiddlewareLogger(logger.info, cfg.middleware, buildHeader
 app.use(allow(cfg.allow), json(), middleware.log)
 
 const pool = createPool(cfg.db)
-const db = new PoolManager(pool)
-const ctx = useContext(db, logger, middleware)
+const ctx = useContext(pool, logger, middleware)
 route(app, ctx)
 
 http.createServer(app).listen(cfg.port, () => {
