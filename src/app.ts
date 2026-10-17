@@ -4,7 +4,7 @@ import express, { json, Request } from "express"
 import { allow, toString } from "express-web-kit"
 import http from "http"
 import { createLogger, updateLog } from "logger-core"
-import { mask, MiddlewareLogger, SimpleMap } from "middleware-logging"
+import { Context, mask, MiddlewareLogger } from "middleware-logging"
 import { createPool, resource } from "mysql2-core"
 import { config, environments } from "./config"
 import { useContext } from "./context"
@@ -20,7 +20,7 @@ updateLog(logger, cfg.log)
 
 const app = express()
 
-const middleware = new MiddlewareLogger(logger.info, cfg.middleware, buildHeader, encryptResponse, encryptRequest)
+const middleware = new MiddlewareLogger(logger.info, cfg.middleware, buildContext, encryptResponse, encryptRequest)
 app.use(allow(cfg.allow), json(), middleware.log)
 
 const pool = createPool(cfg.db)
@@ -31,16 +31,10 @@ http.createServer(app).listen(cfg.port, () => {
   console.log("Start server at port " + cfg.port)
 })
 
-function buildHeader(req: Request, map: SimpleMap): SimpleMap {
-  const requestId = req.get("X-Request-ID")
-  if (requestId) {
-    map["requestId"] = requestId
-  }
-  const correlationId = req.get("X-Correlation-ID")
-  if (correlationId) {
-    map["correlationId"] = correlationId
-  }
-  return map
+function buildContext(req: Request, context: Context): Context {
+  context.requestId = req.header("X-Request-ID") ?? ""
+  context.correlationId = req.header("X-Correlation-ID") ?? ""
+  return context
 }
 function encryptResponse(rs: string): string {
   try {
